@@ -74,15 +74,9 @@ ImageButton.Image = "rbxassetid://13940080072";
 ImageButton.AutoButtonColor = false;
 MakeDraggable(ImageButton, OutlineButton);
 CreateRounded(ImageButton, 10);
-ImageButton.MouseButton1Click:Connect(function()
-    local relzHub = game.CoreGui:FindFirstChild("RelzHub")
-    if relzHub then
-        local outline = relzHub:FindFirstChild("OutlineMain")
-        if outline then
-            outline.Visible = not outline.Visible
-        end
-    end
-end)
+ImageButton.MouseButton1Click:connect(function()
+	(game.CoreGui:FindFirstChild("RelzHub")).Enabled = not (game.CoreGui:FindFirstChild("RelzHub")).Enabled;
+end);
 local NotificationFrame = Instance.new("ScreenGui");
 NotificationFrame.Name = "NotificationFrame";
 NotificationFrame.Parent = game.CoreGui;
@@ -416,15 +410,9 @@ function Update:Window(Config)
 	CloseButton.ImageTransparency = 0;
 	CloseButton.ImageColor3 = Color3.fromRGB(245, 245, 245);
 	CreateRounded(CloseButton, 3);
-	CloseButton.MouseButton1Click:Connect(function()
-    local relzHub = game.CoreGui:FindFirstChild("RelzHub")
-    if relzHub then
-        local outline = relzHub:FindFirstChild("OutlineMain")
-        if outline then
-            outline.Visible = not outline.Visible
-        end
-    end
-end)
+	CloseButton.MouseButton1Click:connect(function()
+		(game.CoreGui:FindFirstChild("RelzHub")).Enabled = not (game.CoreGui:FindFirstChild("RelzHub")).Enabled;
+	end);
 	local ResizeButton = Instance.new("ImageButton");
 	ResizeButton.Name = "ResizeButton";
 	ResizeButton.Parent = Top;
